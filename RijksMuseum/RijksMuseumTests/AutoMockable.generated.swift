@@ -13,6 +13,26 @@ import Foundation
 
 @testable import RijksMuseum
 
+class CollectionRequestingMock: CollectionRequesting {
+    // MARK: - getImages
+
+    var getImagesMaxResultsForPageCallsCount = 0
+    var getImagesMaxResultsForPageCalled: Bool {
+        getImagesMaxResultsForPageCallsCount > 0
+    }
+
+    var getImagesMaxResultsForPageReceivedArguments: (maxCount: Int, page: Int, completion: (Result<[(title: String, url: String)], Error>) -> Void)?
+    var getImagesMaxResultsForPageReceivedInvocations: [(maxCount: Int, page: Int, completion: (Result<[(title: String, url: String)], Error>) -> Void)] = []
+    var getImagesMaxResultsForPageClosure: ((Int, Int, @escaping (Result<[(title: String, url: String)], Error>) -> Void) -> Void)?
+
+    func getImages(maxResults maxCount: Int, forPage page: Int, _ completion: @escaping (Result<[(title: String, url: String)], Error>) -> Void) {
+        getImagesMaxResultsForPageCallsCount += 1
+        getImagesMaxResultsForPageReceivedArguments = (maxCount: maxCount, page: page, completion: completion)
+        getImagesMaxResultsForPageReceivedInvocations.append((maxCount: maxCount, page: page, completion: completion))
+        getImagesMaxResultsForPageClosure?(maxCount, page, completion)
+    }
+}
+
 class ImageLoadingMock: ImageLoading {
     // MARK: - loadImage
 
