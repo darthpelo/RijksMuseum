@@ -1,0 +1,9 @@
+sources:
+  - RijksMuseum
+templates:
+  - ../Sourcery/Templates/AutoMockable.stencil
+output:
+  RijksMuseumTests/AutoMockable.generated.swift
+args:
+  autoMockableTestableImports:
+    - RijksMuseum 
