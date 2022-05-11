@@ -14,6 +14,8 @@
 		4CA305DB282C008900A72CFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CA305DA282C008900A72CFA /* Assets.xcassets */; };
 		4CA305DE282C008900A72CFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA305DC282C008900A72CFA /* LaunchScreen.storyboard */; };
 		4CA305E9282C008A00A72CFA /* RijksMuseumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA305E8282C008A00A72CFA /* RijksMuseumTests.swift */; };
+		4CDF5A79282C05D800AF69A9 /* Network in Resources */ = {isa = PBXBuildFile; fileRef = 4CDF5A78282C05D800AF69A9 /* Network */; };
+		4CDF5A7B282C0B9F00AF69A9 /* ImageLoading in Resources */ = {isa = PBXBuildFile; fileRef = 4CDF5A7A282C0B9F00AF69A9 /* ImageLoading */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		4CA305DF282C008900A72CFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CA305E4282C008A00A72CFA /* RijksMuseumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RijksMuseumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA305E8282C008A00A72CFA /* RijksMuseumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksMuseumTests.swift; sourceTree = "<group>"; };
+		4CDF5A78282C05D800AF69A9 /* Network */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Network; sourceTree = "<group>"; };
+		4CDF5A7A282C0B9F00AF69A9 /* ImageLoading */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ImageLoading; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 		4CA305D0282C008700A72CFA /* RijksMuseum */ = {
 			isa = PBXGroup;
 			children = (
+				4CDF5A7A282C0B9F00AF69A9 /* ImageLoading */,
+				4CDF5A78282C05D800AF69A9 /* Network */,
 				4CA305D1282C008700A72CFA /* AppDelegate.swift */,
 				4CA305D3282C008700A72CFA /* SceneDelegate.swift */,
 				4CA305D5282C008700A72CFA /* ViewController.swift */,
@@ -181,8 +187,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CA305DE282C008900A72CFA /* LaunchScreen.storyboard in Resources */,
+				4CDF5A79282C05D800AF69A9 /* Network in Resources */,
 				4CA305DB282C008900A72CFA /* Assets.xcassets in Resources */,
 				4CA305D9282C008700A72CFA /* Main.storyboard in Resources */,
+				4CDF5A7B282C0B9F00AF69A9 /* ImageLoading in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
