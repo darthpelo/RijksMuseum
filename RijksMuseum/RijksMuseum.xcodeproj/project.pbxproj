@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C91AD80282C3CCA0032602E /* CollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91AD7F282C3CCA0032602E /* CollectionService.swift */; };
+		4C91AD81282C3F370032602E /* CollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91AD7F282C3CCA0032602E /* CollectionService.swift */; };
+		4C91AD82282C3F4F0032602E /* CollectionRequesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF5A7F282C0E3F00AF69A9 /* CollectionRequesting.swift */; };
 		4CA305D2282C008700A72CFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA305D1282C008700A72CFA /* AppDelegate.swift */; };
 		4CA305D4282C008700A72CFA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA305D3282C008700A72CFA /* SceneDelegate.swift */; };
 		4CA305D6282C008700A72CFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA305D5282C008700A72CFA /* ViewController.swift */; };
@@ -61,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C91AD7F282C3CCA0032602E /* CollectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionService.swift; sourceTree = "<group>"; };
 		4CA305CE282C008700A72CFA /* RijksMuseum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RijksMuseum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA305D1282C008700A72CFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CA305D3282C008700A72CFA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 			children = (
 				4CDF5A7F282C0E3F00AF69A9 /* CollectionRequesting.swift */,
 				4CDF5AC2282C11A300AF69A9 /* CollectionRequest.swift */,
+				4C91AD7F282C3CCA0032602E /* CollectionService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -481,6 +486,7 @@
 				4CDF5AA7282C0FA300AF69A9 /* UrlError.swift in Sources */,
 				4CDF5A80282C0E3F00AF69A9 /* CollectionRequesting.swift in Sources */,
 				4CDF5AAE282C0FAD00AF69A9 /* ImageLoader.swift in Sources */,
+				4C91AD80282C3CCA0032602E /* CollectionService.swift in Sources */,
 				4CDF5AA5282C0FA300AF69A9 /* Request.swift in Sources */,
 				4CDF5AA6282C0FA300AF69A9 /* HttpMethod.swift in Sources */,
 				4CDF5AA3282C0FA300AF69A9 /* UrlRestApiRequester.swift in Sources */,
@@ -505,6 +511,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C91AD82282C3F4F0032602E /* CollectionRequesting.swift in Sources */,
 				4CDF5ABB282C0FF200AF69A9 /* URLEncoder.swift in Sources */,
 				4CDF5AC6282C12B700AF69A9 /* CollectionRequest.swift in Sources */,
 				4CDF5ABC282C0FF500AF69A9 /* JSONDecoder+Decoding.swift in Sources */,
@@ -522,6 +529,7 @@
 				4CDF5ABA282C0FEE00AF69A9 /* Decoding.swift in Sources */,
 				4CDF5AC5282C123E00AF69A9 /* CollectionServiceTests.swift in Sources */,
 				4CDF5A85282C0F0800AF69A9 /* RequestingMock.swift in Sources */,
+				4C91AD81282C3F370032602E /* CollectionService.swift in Sources */,
 				4CDF5ABD282C0FF900AF69A9 /* ImagePool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
