@@ -32,7 +32,7 @@ final class CollectionServiceTests: XCTestCase {
         let page = Int.random(in: 0 ..< 100)
 
         // when request starts
-        subject.getImages(maxResults: maxResults, forPage: page) { _ in }
+        subject.getImages(ofMaxResults: maxResults, forPage: page) { _ in }
 
         // then it should be composed correctly
         let request = requester.makeRequestReceivedArguments?.request
@@ -53,7 +53,7 @@ final class CollectionServiceTests: XCTestCase {
         var receivedModel: [(title: String, url: String)]!
 
         // when request finishes
-        subject.getImages(maxResults: 0, forPage: 0) { result in
+        subject.getImages(ofMaxResults: 0, forPage: 0) { result in
             if case let .success(model) = result {
                 receivedModel = model
             }
@@ -75,7 +75,7 @@ final class CollectionServiceTests: XCTestCase {
         var receivedError: TestError!
 
         // when request fails
-        subject.getImages(maxResults: 0, forPage: 0) { result in
+        subject.getImages(ofMaxResults: 0, forPage: 0) { result in
             if case let .failure(error) = result {
                 receivedError = error as? TestError
             }

@@ -11,11 +11,11 @@ import Foundation
 /// sourcery: AutoMockable
 protocol CollectionRequesting: AnyObject {
     /// Requests bunch of images
-    /// - Parameter maxResults: The number of results per page
-    /// - Parameter page: Page index
+    /// - Parameter ofMaxResults: The number of results per page
+    /// - Parameter forPage: Page index
     /// - Parameter completion: Request completion handler. Returns the images Tiles, URLs list
     func getImages(
-        maxResults maxCount: Int,
+        ofMaxResults maxCount: Int,
         forPage page: Int,
         _ completion: @escaping (Result<[(title: String, url: String)], Error>) -> Void
     )

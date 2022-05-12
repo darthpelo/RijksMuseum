@@ -16,20 +16,20 @@ import Foundation
 class CollectionRequestingMock: CollectionRequesting {
     // MARK: - getImages
 
-    var getImagesMaxResultsForPageCallsCount = 0
-    var getImagesMaxResultsForPageCalled: Bool {
-        getImagesMaxResultsForPageCallsCount > 0
+    var getImagesOfMaxResultsForPageCallsCount = 0
+    var getImagesOfMaxResultsForPageCalled: Bool {
+        getImagesOfMaxResultsForPageCallsCount > 0
     }
 
-    var getImagesMaxResultsForPageReceivedArguments: (maxCount: Int, page: Int, completion: (Result<[(title: String, url: String)], Error>) -> Void)?
-    var getImagesMaxResultsForPageReceivedInvocations: [(maxCount: Int, page: Int, completion: (Result<[(title: String, url: String)], Error>) -> Void)] = []
-    var getImagesMaxResultsForPageClosure: ((Int, Int, @escaping (Result<[(title: String, url: String)], Error>) -> Void) -> Void)?
+    var getImagesOfMaxResultsForPageReceivedArguments: (maxCount: Int, page: Int, completion: (Result<[(title: String, url: String)], Error>) -> Void)?
+    var getImagesOfMaxResultsForPageReceivedInvocations: [(maxCount: Int, page: Int, completion: (Result<[(title: String, url: String)], Error>) -> Void)] = []
+    var getImagesOfMaxResultsForPageClosure: ((Int, Int, @escaping (Result<[(title: String, url: String)], Error>) -> Void) -> Void)?
 
-    func getImages(maxResults maxCount: Int, forPage page: Int, _ completion: @escaping (Result<[(title: String, url: String)], Error>) -> Void) {
-        getImagesMaxResultsForPageCallsCount += 1
-        getImagesMaxResultsForPageReceivedArguments = (maxCount: maxCount, page: page, completion: completion)
-        getImagesMaxResultsForPageReceivedInvocations.append((maxCount: maxCount, page: page, completion: completion))
-        getImagesMaxResultsForPageClosure?(maxCount, page, completion)
+    func getImages(ofMaxResults maxCount: Int, forPage page: Int, _ completion: @escaping (Result<[(title: String, url: String)], Error>) -> Void) {
+        getImagesOfMaxResultsForPageCallsCount += 1
+        getImagesOfMaxResultsForPageReceivedArguments = (maxCount: maxCount, page: page, completion: completion)
+        getImagesOfMaxResultsForPageReceivedInvocations.append((maxCount: maxCount, page: page, completion: completion))
+        getImagesOfMaxResultsForPageClosure?(maxCount, page, completion)
     }
 }
 
