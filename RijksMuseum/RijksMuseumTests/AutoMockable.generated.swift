@@ -107,6 +107,26 @@ class CollectionRequestingMock: CollectionRequesting {
     }
 }
 
+class CollectionRoutingMock: CollectionRouting {
+    // MARK: - showCollection
+
+    var showCollectionCallsCount = 0
+    var showCollectionCalled: Bool {
+        showCollectionCallsCount > 0
+    }
+
+    var showCollectionReceivedOnCompletion: ((String) -> Void)?
+    var showCollectionReceivedInvocations: [(String) -> Void] = []
+    var showCollectionClosure: ((@escaping (String) -> Void) -> Void)?
+
+    func showCollection(_ onCompletion: @escaping (String) -> Void) {
+        showCollectionCallsCount += 1
+        showCollectionReceivedOnCompletion = onCompletion
+        showCollectionReceivedInvocations.append(onCompletion)
+        showCollectionClosure?(onCompletion)
+    }
+}
+
 class ImageLoadingMock: ImageLoading {
     // MARK: - loadImage
 

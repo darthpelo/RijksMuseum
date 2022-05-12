@@ -9,16 +9,19 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        true
-    }
+        window = UIWindow(frame: UIScreen.main.bounds)
 
-    // MARK: UISceneSession Lifecycle
+        let factory = CollectionFactory()
+        let navigationController = UINavigationController()
+        let collectionViewController = factory.create(withNavigationController: navigationController)
+        navigationController.viewControllers = [collectionViewController]
 
-    func application(_: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options _: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+
+        return true
     }
 }

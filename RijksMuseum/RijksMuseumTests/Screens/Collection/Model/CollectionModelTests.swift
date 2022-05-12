@@ -8,7 +8,7 @@
 @testable import RijksMuseum
 import XCTest
 
-class CollectionModelTests: XCTestCase {
+final class CollectionModelTests: XCTestCase {
     private var subject: CollectionModel!
     private var imageLoader: ImageLoadingMock!
     private var presenter: CollectionPresentableMock!

@@ -1,6 +1,6 @@
 /// - Note: `Sourcery` is unable to produce compilable
 /// mock for `Requesting` so we have to do it manually
-class RequestingMock<T: Request>: Requesting {
+final class RequestingMock<T: Request>: Requesting {
     var makeRequestCallsCount = 0
     var makeRequestCalled: Bool {
         makeRequestCallsCount > 0
