@@ -17,6 +17,6 @@ protocol CollectionRequesting: AnyObject {
     func getImages(
         ofMaxResults maxCount: Int,
         forPage page: Int,
-        _ completion: @escaping (Result<[(title: String, url: String)], Error>) -> Void
+        _ completion: @escaping (Result<[ArtObjectData], Error>) -> Void
     )
 }

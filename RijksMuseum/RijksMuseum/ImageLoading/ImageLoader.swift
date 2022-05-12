@@ -37,7 +37,7 @@ public final class ImageLoader: ImageLoading {
                let data = data,
                let image = UIImage(data: data)
             {
-                ImageCompressor.compress(image: image, maxByte: 1_000_000) { [weak self] image in
+                ImageCompressor.compress(image: image, maxByte: 2_000_000) { [weak self] image in
                     guard let self = self,
                           let compressedImage = image
                     else {

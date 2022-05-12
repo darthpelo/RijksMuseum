@@ -91,7 +91,10 @@ final class CollectionViewModel {
 
     /// Handles cell selection event
     /// - Parameter atIndexPath: Index of the touched cell
-    func onCellSelection(atIndexPath _: IndexPath) {}
+    func onCellSelection(atIndexPath indexPath: IndexPath) {
+        let model = collection[indexPath.section * columnsCount + indexPath.row]
+        router.showDetails(objectNumber: model.objectNumber)
+    }
 
     // MARK: - Private
 
@@ -109,8 +112,8 @@ final class CollectionViewModel {
         dataLoadingQueue.addOperation(operation)
     }
 
-    private func getImages() -> Result<[(title: String, url: String)], Error>? {
-        var result: Result<[(title: String, url: String)], Error>?
+    private func getImages() -> Result<[ArtObjectData], Error>? {
+        var result: Result<[ArtObjectData], Error>?
 
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
@@ -125,7 +128,7 @@ final class CollectionViewModel {
         return result
     }
 
-    private func handleImages(_ result: Result<[(title: String, url: String)], Error>) {
+    private func handleImages(_ result: Result<[ArtObjectData], Error>) {
         if case let .success(data) = result {
             DispatchQueue.main.async {
                 self.appendNewImages(data)
@@ -139,7 +142,7 @@ final class CollectionViewModel {
         }
     }
 
-    private func appendNewImages(_ data: [(title: String, url: String)]) {
+    private func appendNewImages(_ data: [ArtObjectData]) {
         isActivityIndicatorAnimating = false
         onPullToRefreshDeactivation?()
 
@@ -148,6 +151,7 @@ final class CollectionViewModel {
 
             let imageLoader = ImageLoader(queue: imageLoadingQueue, url: url, cache: imagePool)
             let model = CollectionModel(
+                objectNumber: $0.objectNumber,
                 imageLoader: imageLoader,
                 imageTitle: $0.title,
                 loadingTitle: "Loading",

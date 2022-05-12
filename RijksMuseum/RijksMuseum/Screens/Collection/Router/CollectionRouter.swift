@@ -24,4 +24,12 @@ final class CollectionRouter: CollectionRouting {
         let viewController = factory.create(withNavigationController: rootViewController)
         rootViewController.pushViewController(viewController, animated: false)
     }
+
+    func showDetails(objectNumber: String) {
+        guard let rootViewController = rootViewController else { return }
+
+        let viewController = CollectionDetailsFactory().create(withNavigationController: rootViewController,
+                                                               objectNumber: objectNumber)
+        rootViewController.pushViewController(viewController, animated: true)
+    }
 }

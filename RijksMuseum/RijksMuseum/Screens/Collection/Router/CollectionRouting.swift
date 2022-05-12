@@ -13,4 +13,8 @@ protocol CollectionRouting: AnyObject {
     /// Opens Collection module
     /// - Parameter onCompletion: Collection query input event completion handler
     func showCollection(_ onCompletion: @escaping (String) -> Void)
+
+    /// Opens Details module
+    /// - Parameter objectNumber: ArtObject number
+    func showDetails(objectNumber: String)
 }

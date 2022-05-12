@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias ArtObjectData = (title: String, url: String, objectNumber: String)
+
 final class CollectionService: CollectionRequesting {
     private let apiUrl = "https://www.rijksmuseum.nl/api/en/collection"
     private let apikey = "0fiuZFh4"
@@ -21,7 +23,7 @@ final class CollectionService: CollectionRequesting {
     func getImages(
         ofMaxResults maxResults: Int,
         forPage page: Int,
-        _ completion: @escaping (Result<[(title: String, url: String)], Error>) -> Void
+        _ completion: @escaping (Result<[ArtObjectData], Error>) -> Void
     ) {
         let request = CollectionRequest(query: "?key=\(apikey)&imgonly=true&type=painting&p=\(page)&ps=\(maxResults)")
         requester.make(request: request) { [weak self] result in
@@ -29,7 +31,7 @@ final class CollectionService: CollectionRequesting {
 
             switch result {
             case let .success(response):
-                let imageData = response.artObjects.map { (self.imageTitle(fromPhoto: $0), self.imageUrl(fromPhoto: $0)) }
+                let imageData = response.artObjects.map { self.imageData(fromArtObject: $0) }
                 completion(.success(imageData))
             case let .failure(error):
                 completion(.failure(error))
@@ -37,11 +39,7 @@ final class CollectionService: CollectionRequesting {
         }
     }
 
-    private func imageUrl(fromPhoto photo: CollectionRequest.Response.ArtObject) -> String {
-        photo.webImage.url
-    }
-
-    private func imageTitle(fromPhoto photo: CollectionRequest.Response.ArtObject) -> String {
-        photo.title
+    private func imageData(fromArtObject artObject: CollectionRequest.Response.ArtObject) -> ArtObjectData {
+        (artObject.title, artObject.webImage.url, artObject.objectNumber)
     }
 }

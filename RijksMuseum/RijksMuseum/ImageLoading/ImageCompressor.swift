@@ -1,8 +1,8 @@
-
 import UIKit
 
 struct ImageCompressor {
-    static func compress(image: UIImage, maxByte: Int,
+    static func compress(image: UIImage,
+                         maxByte: Int,
                          completion: @escaping (UIImage?) -> Void)
     {
         DispatchQueue.global(qos: .userInitiated).async {

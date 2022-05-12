@@ -8,7 +8,7 @@
 import SnapKit
 import UIKit
 
-/// Displays the search results screen
+/// Displays the Collection results screen
 final class CollectionViewController: UIViewController {
     internal typealias Cell = CollectionCell
 
@@ -59,6 +59,11 @@ final class CollectionViewController: UIViewController {
 
             placeholderView.bounds = placeholderView.frame
         }
+    }
+
+    @objc
+    private func onRefreshControlDrag() {
+        viewModel.onPullToRefresh()
     }
 
     private func setupObservers() {
@@ -114,11 +119,6 @@ final class CollectionViewController: UIViewController {
         view.addSubview(activityIndicator)
         activityIndicator.backgroundColor = appearance.activityIndicatorBackgroundColor
         activityIndicator.layer.cornerRadius = appearance.activityIndicatorBackgroundCornerRadius
-    }
-
-    @objc
-    private func onRefreshControlDrag() {
-        viewModel.onPullToRefresh()
     }
 
     private func setupConstraints() {
