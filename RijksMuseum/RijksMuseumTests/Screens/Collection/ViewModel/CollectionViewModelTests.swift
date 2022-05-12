@@ -59,8 +59,8 @@ final class CollectionViewModelTests: XCTestCase {
         subject.onViewLoad()
 
         // it should
-        // 1. Hide activity indicator
-        XCTAssertFalse(subject.isActivityIndicatorAnimating)
+        // 1. Show activity indicator
+        XCTAssertTrue(subject.isActivityIndicatorAnimating)
         // 2. Deactivate the refresh control
         XCTAssertTrue(deactivated)
     }

@@ -10,12 +10,19 @@ import UIKit
 
 /// Displays the search results screen
 final class CollectionViewController: UIViewController {
-    private let appearance = Appearance()
-    private let viewModel: CollectionViewModel
+    internal typealias Cell = CollectionCell
 
+    private let appearance = Appearance()
+    internal let viewModel: CollectionViewModel
+
+    private let refreshControl = UIRefreshControl()
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     private let placeholderView = CollectionPlaceholderView()
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+
+    internal var fullRowsCount: Int { viewModel.collection.count / viewModel.columnsCount }
+    internal var cellSize: CGFloat { view.bounds.width / CGFloat(viewModel.columnsCount) }
+    internal let refreshGapInRows: Int = 2
 
     /// Designated initializer
     /// - Parameter viewModel: ViewModel
@@ -54,14 +61,50 @@ final class CollectionViewController: UIViewController {
         }
     }
 
-    private func setupObservers() {}
+    private func setupObservers() {
+        viewModel.onPullToRefreshDeactivation = { [weak self] in
+            if let self = self, self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
+        }
+
+        viewModel.$isActivityIndicatorAnimating.onValueChange = { [weak self] isAnimating in
+            if isAnimating {
+                self?.activityIndicator.startAnimating()
+                self?.view.isUserInteractionEnabled = false
+            } else {
+                self?.activityIndicator.stopAnimating()
+                self?.view.isUserInteractionEnabled = true
+            }
+        }
+
+        viewModel.onReload = { [weak self] in
+            self?.collectionView.reloadData()
+        }
+
+        viewModel.onSectionsInsertion = { [weak self] sectionsIndices in
+            self?.collectionView.insertSections(sectionsIndices)
+        }
+
+        viewModel.$isPlaceholderHidden.onValueChange = { [weak self] isHidden in
+            self?.placeholderView.isHidden = isHidden
+        }
+    }
+
     private func setupSubviews() {
         navigationController?.isNavigationBarHidden = appearance.isNavigationBarHidden
+        title = appearance.navigationTitle
         view.backgroundColor = appearance.backgroundColor
 
         view.addSubview(collectionView)
         collectionView.alwaysBounceVertical = true
+        collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.showsVerticalScrollIndicator = appearance.collectionViewShowsVerticalScrollIndicator
+        collectionView.register(Cell.self, forCellWithReuseIdentifier: Cell.reuseIdentifier)
+
+        collectionView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(onRefreshControlDrag), for: .valueChanged)
 
         collectionView.addSubview(placeholderView)
         placeholderView.setImage(appearance.placeholderViewImage)
@@ -71,6 +114,11 @@ final class CollectionViewController: UIViewController {
         view.addSubview(activityIndicator)
         activityIndicator.backgroundColor = appearance.activityIndicatorBackgroundColor
         activityIndicator.layer.cornerRadius = appearance.activityIndicatorBackgroundCornerRadius
+    }
+
+    @objc
+    private func onRefreshControlDrag() {
+        viewModel.onPullToRefresh()
     }
 
     private func setupConstraints() {
@@ -83,17 +131,17 @@ final class CollectionViewController: UIViewController {
     }
 }
 
-// MARK: - Appearance
+// MARK: - UIScrollViewDelegate {
 
-private extension CollectionViewController {
-    struct Appearance {
-        let isNavigationBarHidden: Bool = true
-        let backgroundColor: UIColor = .systemBackground
-        let searchBarStyle: UISearchBar.Style = .minimal
-        let searchBarTextFieldClearButtonMode: UITextField.ViewMode = .never
-        let collectionViewShowsVerticalScrollIndicator: Bool = false
-        let placeholderViewImage: UIImage = .init(named: "no_results_placeholder") ?? .init()
-        let activityIndicatorBackgroundColor: UIColor = .white
-        let activityIndicatorBackgroundCornerRadius: CGFloat = 2.0
+extension CollectionViewController {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+
+        let refreshGap = CGFloat(refreshGapInRows) * cellSize
+
+        if maximumOffset - currentOffset <= refreshGap, currentOffset > 0, maximumOffset > 0 {
+            viewModel.onBottomDragging()
+        }
     }
 }

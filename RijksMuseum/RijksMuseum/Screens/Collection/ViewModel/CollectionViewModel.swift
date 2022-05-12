@@ -26,7 +26,7 @@ final class CollectionViewModel {
 
     /// Activity indicator animating state
     @Observable
-    private(set) var isActivityIndicatorAnimating: Bool = false
+    private(set) var isActivityIndicatorAnimating = false
 
     /// Collection list placeholder visibility indicator
     @Observable
@@ -73,6 +73,7 @@ final class CollectionViewModel {
 
     /// Handles view loading completion event
     func onViewLoad() {
+        isActivityIndicatorAnimating = true
         loadNextPage()
     }
 
@@ -87,6 +88,10 @@ final class CollectionViewModel {
         currentPage = 1
         loadNextPage()
     }
+
+    /// Handles cell selection event
+    /// - Parameter atIndexPath: Index of the touched cell
+    func onCellSelection(atIndexPath _: IndexPath) {}
 
     // MARK: - Private
 
@@ -127,6 +132,7 @@ final class CollectionViewModel {
             }
         } else if currentPage == 1 {
             DispatchQueue.main.async {
+                self.isActivityIndicatorAnimating = false
                 self.collection = []
                 self.onReload?()
             }
