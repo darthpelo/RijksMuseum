@@ -72,9 +72,9 @@ final class CollectionViewModelTests: XCTestCase {
             completion(query)
         }
 
-        let collection: [(title: String, url: String)] = [(title: "abc", url: ""),
-                                                          (title: "abc", url: ""),
-                                                          (title: "abc", url: "")]
+        let collection: [ArtObjectData] = [(title: "abc", url: "", objectNumber: ""),
+                                           (title: "abc", url: "", objectNumber: ""),
+                                           (title: "abc", url: "", objectNumber: "")]
         service.getImagesOfMaxResultsForPageClosure = { _, _, completion in
             completion(.success(collection))
         }
@@ -105,9 +105,9 @@ final class CollectionViewModelTests: XCTestCase {
             completion(query)
         }
 
-        let collection: [(title: String, url: String)] = [(title: "abc", url: ""),
-                                                          (title: "abc", url: ""),
-                                                          (title: "abc", url: "")]
+        let collection: [ArtObjectData] = [(title: "abc", url: "", objectNumber: ""),
+                                           (title: "abc", url: "", objectNumber: ""),
+                                           (title: "abc", url: "", objectNumber: "")]
         service.getImagesOfMaxResultsForPageClosure = { _, _, completion in
             completion(.success(collection))
         }

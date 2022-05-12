@@ -15,11 +15,13 @@ final class CollectionModelTests: XCTestCase {
     private let loadingTitle = "loadingTitle"
     private let failureTitle = "failureTitle"
     private let imageTitle = "imageTitle"
+    private let objectNumber = "objectNumber"
 
     override func setUpWithError() throws {
         imageLoader = .init()
         presenter = .init()
         subject = .init(
+            objectNumber: objectNumber,
             imageLoader: imageLoader,
             imageTitle: imageTitle,
             loadingTitle: loadingTitle,

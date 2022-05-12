@@ -50,7 +50,7 @@ final class CollectionServiceTests: XCTestCase {
             completion(.success(response))
         }
 
-        var receivedModel: [(title: String, url: String)]!
+        var receivedModel: [ArtObjectData]!
 
         // when request finishes
         subject.getImages(ofMaxResults: 0, forPage: 0) { result in
