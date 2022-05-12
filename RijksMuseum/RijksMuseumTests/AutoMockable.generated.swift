@@ -13,6 +13,80 @@ import Foundation
 
 @testable import RijksMuseum
 
+class CollectionPresentableMock: CollectionPresentable {
+    // MARK: - setTitle
+
+    var setTitleCallsCount = 0
+    var setTitleCalled: Bool {
+        setTitleCallsCount > 0
+    }
+
+    var setTitleReceivedTitle: String?
+    var setTitleReceivedInvocations: [String] = []
+    var setTitleClosure: ((String) -> Void)?
+
+    func setTitle(_ title: String) {
+        setTitleCallsCount += 1
+        setTitleReceivedTitle = title
+        setTitleReceivedInvocations.append(title)
+        setTitleClosure?(title)
+    }
+
+    // MARK: - setImage
+
+    var setImageCallsCount = 0
+    var setImageCalled: Bool {
+        setImageCallsCount > 0
+    }
+
+    var setImageReceivedImage: UIImage?
+    var setImageReceivedInvocations: [UIImage] = []
+    var setImageClosure: ((UIImage) -> Void)?
+
+    func setImage(_ image: UIImage) {
+        setImageCallsCount += 1
+        setImageReceivedImage = image
+        setImageReceivedInvocations.append(image)
+        setImageClosure?(image)
+    }
+
+    // MARK: - setPlaceholder
+
+    var setPlaceholderCallsCount = 0
+    var setPlaceholderCalled: Bool {
+        setPlaceholderCallsCount > 0
+    }
+
+    var setPlaceholderReceivedPalceholder: String?
+    var setPlaceholderReceivedInvocations: [String] = []
+    var setPlaceholderClosure: ((String) -> Void)?
+
+    func setPlaceholder(_ palceholder: String) {
+        setPlaceholderCallsCount += 1
+        setPlaceholderReceivedPalceholder = palceholder
+        setPlaceholderReceivedInvocations.append(palceholder)
+        setPlaceholderClosure?(palceholder)
+    }
+
+    // MARK: - setOnPrepareForReuse
+
+    var setOnPrepareForReuseCallsCount = 0
+    var setOnPrepareForReuseCalled: Bool {
+        setOnPrepareForReuseCallsCount > 0
+    }
+
+    var setOnPrepareForReuseReceivedOnPrepareForReuse: (() -> Void)?
+    var setOnPrepareForReuseReceivedInvocations: [() -> Void] = []
+    var setOnPrepareForReuseClosure: ((@escaping () -> Void) -> Void)?
+
+    func setOnPrepareForReuse(_ onPrepareForReuse: @escaping () -> Void) {
+        setOnPrepareForReuseCallsCount += 1
+        setOnPrepareForReuseReceivedOnPrepareForReuse = onPrepareForReuse
+        setOnPrepareForReuseReceivedInvocations.append(onPrepareForReuse)
+        setOnPrepareForReuseClosure?(onPrepareForReuse)
+    }
+}
+
 class CollectionRequestingMock: CollectionRequesting {
     // MARK: - getImages
 

@@ -11,6 +11,12 @@
 		4C91AD81282C3F370032602E /* CollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91AD7F282C3CCA0032602E /* CollectionService.swift */; };
 		4C91AD82282C3F4F0032602E /* CollectionRequesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF5A7F282C0E3F00AF69A9 /* CollectionRequesting.swift */; };
 		4C91AD84282CE7710032602E /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91AD83282CE7710032602E /* AutoMockable.generated.swift */; };
+		4C91AD8A282CEAA90032602E /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91AD89282CEAA90032602E /* CollectionViewModel.swift */; };
+		4C91AD8C282CEADD0032602E /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91AD8B282CEADD0032602E /* CollectionModel.swift */; };
+		4C91AD8E282CEB030032602E /* CollectionPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91AD8D282CEB030032602E /* CollectionPresentable.swift */; };
+		4C91AD91282CEC120032602E /* CollectionModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91AD90282CEC120032602E /* CollectionModelTests.swift */; };
+		4C91AD92282CED6B0032602E /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91AD8B282CEADD0032602E /* CollectionModel.swift */; };
+		4C91AD93282CED790032602E /* CollectionPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91AD8D282CEB030032602E /* CollectionPresentable.swift */; };
 		4CA305D2282C008700A72CFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA305D1282C008700A72CFA /* AppDelegate.swift */; };
 		4CA305D4282C008700A72CFA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA305D3282C008700A72CFA /* SceneDelegate.swift */; };
 		4CA305D6282C008700A72CFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA305D5282C008700A72CFA /* ViewController.swift */; };
@@ -67,6 +73,10 @@
 /* Begin PBXFileReference section */
 		4C91AD7F282C3CCA0032602E /* CollectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionService.swift; sourceTree = "<group>"; };
 		4C91AD83282CE7710032602E /* AutoMockable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMockable.generated.swift; sourceTree = "<group>"; };
+		4C91AD89282CEAA90032602E /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
+		4C91AD8B282CEADD0032602E /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
+		4C91AD8D282CEB030032602E /* CollectionPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPresentable.swift; sourceTree = "<group>"; };
+		4C91AD90282CEC120032602E /* CollectionModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModelTests.swift; sourceTree = "<group>"; };
 		4CA305CE282C008700A72CFA /* RijksMuseum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RijksMuseum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA305D1282C008700A72CFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CA305D3282C008700A72CFA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +125,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C91AD85282CEA4F0032602E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C91AD8B282CEADD0032602E /* CollectionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4C91AD86282CEA680032602E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4CA305DF282C008900A72CFA /* Info.plist */,
+				4CA305DA282C008900A72CFA /* Assets.xcassets */,
+				4CA305DC282C008900A72CFA /* LaunchScreen.storyboard */,
+				4CA305D7282C008700A72CFA /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4C91AD87282CEA7D0032602E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C91AD8D282CEB030032602E /* CollectionPresentable.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C91AD88282CEA830032602E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4C91AD89282CEAA90032602E /* CollectionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4C91AD8F282CEBFB0032602E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C91AD90282CEC120032602E /* CollectionModelTests.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4CA305C5282C008700A72CFA = {
 			isa = PBXGroup;
 			children = (
@@ -136,16 +189,13 @@
 		4CA305D0282C008700A72CFA /* RijksMuseum */ = {
 			isa = PBXGroup;
 			children = (
-				4CDF5AA8282C0FAD00AF69A9 /* ImageLoading */,
-				4CDF5A86282C0FA300AF69A9 /* Network */,
-				4CDF5A7C282C0DB100AF69A9 /* Screens */,
 				4CA305D1282C008700A72CFA /* AppDelegate.swift */,
 				4CA305D3282C008700A72CFA /* SceneDelegate.swift */,
 				4CA305D5282C008700A72CFA /* ViewController.swift */,
-				4CA305D7282C008700A72CFA /* Main.storyboard */,
-				4CA305DA282C008900A72CFA /* Assets.xcassets */,
-				4CA305DC282C008900A72CFA /* LaunchScreen.storyboard */,
-				4CA305DF282C008900A72CFA /* Info.plist */,
+				4CDF5AA8282C0FAD00AF69A9 /* ImageLoading */,
+				4CDF5A86282C0FA300AF69A9 /* Network */,
+				4C91AD86282CEA680032602E /* Resources */,
+				4CDF5A7C282C0DB100AF69A9 /* Screens */,
 			);
 			path = RijksMuseum;
 			sourceTree = "<group>";
@@ -170,6 +220,9 @@
 		4CDF5A7D282C0DBA00AF69A9 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
+				4C91AD88282CEA830032602E /* ViewModel */,
+				4C91AD87282CEA7D0032602E /* View */,
+				4C91AD85282CEA4F0032602E /* Model */,
 				4CDF5A7E282C0DD900AF69A9 /* Service */,
 			);
 			path = Collection;
@@ -196,6 +249,7 @@
 		4CDF5A82282C0EDE00AF69A9 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
+				4C91AD8F282CEBFB0032602E /* Model */,
 				4CDF5A83282C0EE700AF69A9 /* Service */,
 			);
 			path = Collection;
@@ -502,11 +556,14 @@
 				4CDF5AB2282C0FAD00AF69A9 /* ImageCaching.swift in Sources */,
 				4CDF5AB1282C0FAD00AF69A9 /* SyncOperation.swift in Sources */,
 				4CDF5A9F282C0FA300AF69A9 /* Decoding.swift in Sources */,
+				4C91AD8C282CEADD0032602E /* CollectionModel.swift in Sources */,
 				4CA305D4282C008700A72CFA /* SceneDelegate.swift in Sources */,
 				4CDF5AA4282C0FA300AF69A9 /* RestApiRequester.swift in Sources */,
+				4C91AD8A282CEAA90032602E /* CollectionViewModel.swift in Sources */,
 				4CDF5AA2282C0FA300AF69A9 /* Requesting.swift in Sources */,
 				4CDF5AB0282C0FAD00AF69A9 /* ImageLoading.swift in Sources */,
 				4CDF5AC3282C11A300AF69A9 /* CollectionRequest.swift in Sources */,
+				4C91AD8E282CEB030032602E /* CollectionPresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,11 +587,14 @@
 				4CDF5AB4282C0FC900AF69A9 /* UrlRestApiRequester.swift in Sources */,
 				4CDF5AB7282C0FD900AF69A9 /* HttpMethod.swift in Sources */,
 				4CDF5AC1282C0FF900AF69A9 /* SyncOperation.swift in Sources */,
+				4C91AD92282CED6B0032602E /* CollectionModel.swift in Sources */,
 				4CDF5ABA282C0FEE00AF69A9 /* Decoding.swift in Sources */,
 				4CDF5AC5282C123E00AF69A9 /* CollectionServiceTests.swift in Sources */,
 				4CDF5A85282C0F0800AF69A9 /* RequestingMock.swift in Sources */,
 				4C91AD81282C3F370032602E /* CollectionService.swift in Sources */,
 				4CDF5ABD282C0FF900AF69A9 /* ImagePool.swift in Sources */,
+				4C91AD91282CEC120032602E /* CollectionModelTests.swift in Sources */,
+				4C91AD93282CED790032602E /* CollectionPresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,7 +751,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GS86NCENM6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RijksMuseum/Info.plist;
+				INFOPLIST_FILE = RijksMuseum/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -719,7 +779,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GS86NCENM6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RijksMuseum/Info.plist;
+				INFOPLIST_FILE = RijksMuseum/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
