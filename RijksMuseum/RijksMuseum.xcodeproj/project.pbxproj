@@ -32,6 +32,13 @@
 		4C91ADB1282D25530032602E /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADB0282D25530032602E /* CollectionCell.swift */; };
 		4C91ADB3282D28FE0032602E /* CollectionViewController+Apparence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADB2282D28FE0032602E /* CollectionViewController+Apparence.swift */; };
 		4C91ADB5282D29930032602E /* CollectionViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADB4282D29930032602E /* CollectionViewController+CollectionView.swift */; };
+		4C91ADB9282D39520032602E /* CollectionDetailsRequesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADB8282D39520032602E /* CollectionDetailsRequesting.swift */; };
+		4C91ADBB282D39760032602E /* CollectionDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADBA282D39760032602E /* CollectionDetailsService.swift */; };
+		4C91ADBF282D3A110032602E /* CollectionDetailsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADBE282D3A110032602E /* CollectionDetailsServiceTests.swift */; };
+		4C91ADC1282D3A7B0032602E /* CollectionDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADC0282D3A7B0032602E /* CollectionDetailsRequest.swift */; };
+		4C91ADC2282D3AB30032602E /* CollectionDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADC0282D3A7B0032602E /* CollectionDetailsRequest.swift */; };
+		4C91ADC3282D3AC10032602E /* CollectionDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADBA282D39760032602E /* CollectionDetailsService.swift */; };
+		4C91ADC4282D3ACF0032602E /* CollectionDetailsRequesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADB8282D39520032602E /* CollectionDetailsRequesting.swift */; };
 		4CA305D2282C008700A72CFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA305D1282C008700A72CFA /* AppDelegate.swift */; };
 		4CA305D6282C008700A72CFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA305D5282C008700A72CFA /* ViewController.swift */; };
 		4CA305D9282C008700A72CFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA305D7282C008700A72CFA /* Main.storyboard */; };
@@ -102,6 +109,10 @@
 		4C91ADB0282D25530032602E /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		4C91ADB2282D28FE0032602E /* CollectionViewController+Apparence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewController+Apparence.swift"; sourceTree = "<group>"; };
 		4C91ADB4282D29930032602E /* CollectionViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		4C91ADB8282D39520032602E /* CollectionDetailsRequesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsRequesting.swift; sourceTree = "<group>"; };
+		4C91ADBA282D39760032602E /* CollectionDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsService.swift; sourceTree = "<group>"; };
+		4C91ADBE282D3A110032602E /* CollectionDetailsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsServiceTests.swift; sourceTree = "<group>"; };
+		4C91ADC0282D3A7B0032602E /* CollectionDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsRequest.swift; sourceTree = "<group>"; };
 		4CA305CE282C008700A72CFA /* RijksMuseum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RijksMuseum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA305D1282C008700A72CFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CA305D5282C008700A72CFA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +243,40 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		4C91ADB6282D39170032602E /* ObjectDetails */ = {
+			isa = PBXGroup;
+			children = (
+				4C91ADB7282D39490032602E /* Service */,
+			);
+			path = ObjectDetails;
+			sourceTree = "<group>";
+		};
+		4C91ADB7282D39490032602E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4C91ADB8282D39520032602E /* CollectionDetailsRequesting.swift */,
+				4C91ADBA282D39760032602E /* CollectionDetailsService.swift */,
+				4C91ADC0282D3A7B0032602E /* CollectionDetailsRequest.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		4C91ADBC282D39E60032602E /* ObjectDetails */ = {
+			isa = PBXGroup;
+			children = (
+				4C91ADBD282D39F00032602E /* Service */,
+			);
+			path = ObjectDetails;
+			sourceTree = "<group>";
+		};
+		4C91ADBD282D39F00032602E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4C91ADBE282D3A110032602E /* CollectionDetailsServiceTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		4CA305C5282C008700A72CFA = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +321,7 @@
 		4CDF5A7C282C0DB100AF69A9 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				4C91ADB6282D39170032602E /* ObjectDetails */,
 				4CDF5A7D282C0DBA00AF69A9 /* Collection */,
 			);
 			path = Screens;
@@ -307,6 +353,7 @@
 		4CDF5A81282C0ECE00AF69A9 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				4C91ADBC282D39E60032602E /* ObjectDetails */,
 				4CDF5A82282C0EDE00AF69A9 /* Collection */,
 			);
 			path = Screens;
@@ -628,6 +675,7 @@
 				4CDF5AAF282C0FAD00AF69A9 /* ImagePool.swift in Sources */,
 				4CA305D6282C008700A72CFA /* ViewController.swift in Sources */,
 				4C91ADB5282D29930032602E /* CollectionViewController+CollectionView.swift in Sources */,
+				4C91ADB9282D39520032602E /* CollectionDetailsRequesting.swift in Sources */,
 				4CDF5AA0282C0FA300AF69A9 /* URLEncoder.swift in Sources */,
 				4CA305D2282C008700A72CFA /* AppDelegate.swift in Sources */,
 				4C91ADA7282CFBEA0032602E /* ObservablePropertyWrapper.swift in Sources */,
@@ -642,7 +690,9 @@
 				4CDF5AB0282C0FAD00AF69A9 /* ImageLoading.swift in Sources */,
 				4C91AD96282CF35E0032602E /* CollectionFactory.swift in Sources */,
 				4C91AD9B282CF4A20032602E /* CollectionRouting.swift in Sources */,
+				4C91ADBB282D39760032602E /* CollectionDetailsService.swift in Sources */,
 				4CDF5AC3282C11A300AF69A9 /* CollectionRequest.swift in Sources */,
+				4C91ADC1282D3A7B0032602E /* CollectionDetailsRequest.swift in Sources */,
 				4C91ADA9282CFC150032602E /* UIView+ReuseIdentifier.swift in Sources */,
 				4C91AD9D282CF4E90032602E /* CollectionRouter.swift in Sources */,
 				4C91AD8E282CEB030032602E /* CollectionPresentable.swift in Sources */,
@@ -668,10 +718,13 @@
 				4CDF5AB3282C0FBF00AF69A9 /* Requesting.swift in Sources */,
 				4C91ADAA282CFC7B0032602E /* ObservablePropertyWrapper.swift in Sources */,
 				4CDF5AB5282C0FCC00AF69A9 /* RestApiRequester.swift in Sources */,
+				4C91ADC3282D3AC10032602E /* CollectionDetailsService.swift in Sources */,
 				4CDF5AB6282C0FCF00AF69A9 /* Request.swift in Sources */,
+				4C91ADBF282D3A110032602E /* CollectionDetailsServiceTests.swift in Sources */,
 				4CDF5AB4282C0FC900AF69A9 /* UrlRestApiRequester.swift in Sources */,
 				4CDF5AB7282C0FD900AF69A9 /* HttpMethod.swift in Sources */,
 				4CDF5AC1282C0FF900AF69A9 /* SyncOperation.swift in Sources */,
+				4C91ADC2282D3AB30032602E /* CollectionDetailsRequest.swift in Sources */,
 				4C91AD92282CED6B0032602E /* CollectionModel.swift in Sources */,
 				4CDF5ABA282C0FEE00AF69A9 /* Decoding.swift in Sources */,
 				4CDF5AC5282C123E00AF69A9 /* CollectionServiceTests.swift in Sources */,
@@ -681,6 +734,7 @@
 				4C91ADA2282CF7360032602E /* CollectionViewModel.swift in Sources */,
 				4C91AD91282CEC120032602E /* CollectionModelTests.swift in Sources */,
 				4C91AD93282CED790032602E /* CollectionPresentable.swift in Sources */,
+				4C91ADC4282D3ACF0032602E /* CollectionDetailsRequesting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

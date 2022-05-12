@@ -13,6 +13,26 @@ import Foundation
 
 @testable import RijksMuseum
 
+class CollectionDetailsRequestingMock: CollectionDetailsRequesting {
+    // MARK: - getImage
+
+    var getImageOfObjectNumberCallsCount = 0
+    var getImageOfObjectNumberCalled: Bool {
+        getImageOfObjectNumberCallsCount > 0
+    }
+
+    var getImageOfObjectNumberReceivedArguments: (objectNumber: String, completion: (Result<(title: String, url: String), Error>) -> Void)?
+    var getImageOfObjectNumberReceivedInvocations: [(objectNumber: String, completion: (Result<(title: String, url: String), Error>) -> Void)] = []
+    var getImageOfObjectNumberClosure: ((String, @escaping (Result<(title: String, url: String), Error>) -> Void) -> Void)?
+
+    func getImage(ofObjectNumber objectNumber: String, _ completion: @escaping (Result<(title: String, url: String), Error>) -> Void) {
+        getImageOfObjectNumberCallsCount += 1
+        getImageOfObjectNumberReceivedArguments = (objectNumber: objectNumber, completion: completion)
+        getImageOfObjectNumberReceivedInvocations.append((objectNumber: objectNumber, completion: completion))
+        getImageOfObjectNumberClosure?(objectNumber, completion)
+    }
+}
+
 class CollectionPresentableMock: CollectionPresentable {
     // MARK: - setTitle
 
