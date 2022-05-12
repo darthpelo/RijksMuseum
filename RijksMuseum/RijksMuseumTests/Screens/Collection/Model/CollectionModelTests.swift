@@ -61,7 +61,7 @@ class CollectionModelTests: XCTestCase {
     func testSuccessfulLoad() throws {
         // given
         guard
-            let image = UIImage(named: "back_button")
+            let image = UIImage(named: "no_results_placeholder")
         else {
             XCTFail()
             return
