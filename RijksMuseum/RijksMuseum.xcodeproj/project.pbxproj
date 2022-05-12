@@ -39,6 +39,8 @@
 		4C91ADC2282D3AB30032602E /* CollectionDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADC0282D3A7B0032602E /* CollectionDetailsRequest.swift */; };
 		4C91ADC3282D3AC10032602E /* CollectionDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADBA282D39760032602E /* CollectionDetailsService.swift */; };
 		4C91ADC4282D3ACF0032602E /* CollectionDetailsRequesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADB8282D39520032602E /* CollectionDetailsRequesting.swift */; };
+		4C91ADC8282D41A30032602E /* ImageCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADC7282D41A30032602E /* ImageCompressor.swift */; };
+		4C91ADC9282D42190032602E /* ImageCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADC7282D41A30032602E /* ImageCompressor.swift */; };
 		4CA305D2282C008700A72CFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA305D1282C008700A72CFA /* AppDelegate.swift */; };
 		4CA305D6282C008700A72CFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA305D5282C008700A72CFA /* ViewController.swift */; };
 		4CA305D9282C008700A72CFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA305D7282C008700A72CFA /* Main.storyboard */; };
@@ -113,6 +115,7 @@
 		4C91ADBA282D39760032602E /* CollectionDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsService.swift; sourceTree = "<group>"; };
 		4C91ADBE282D3A110032602E /* CollectionDetailsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsServiceTests.swift; sourceTree = "<group>"; };
 		4C91ADC0282D3A7B0032602E /* CollectionDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsRequest.swift; sourceTree = "<group>"; };
+		4C91ADC7282D41A30032602E /* ImageCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCompressor.swift; sourceTree = "<group>"; };
 		4CA305CE282C008700A72CFA /* RijksMuseum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RijksMuseum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA305D1282C008700A72CFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CA305D5282C008700A72CFA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -254,9 +257,9 @@
 		4C91ADB7282D39490032602E /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				4C91ADC0282D3A7B0032602E /* CollectionDetailsRequest.swift */,
 				4C91ADB8282D39520032602E /* CollectionDetailsRequesting.swift */,
 				4C91ADBA282D39760032602E /* CollectionDetailsService.swift */,
-				4C91ADC0282D3A7B0032602E /* CollectionDetailsRequest.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -321,8 +324,8 @@
 		4CDF5A7C282C0DB100AF69A9 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				4C91ADB6282D39170032602E /* ObjectDetails */,
 				4CDF5A7D282C0DBA00AF69A9 /* Collection */,
+				4C91ADB6282D39170032602E /* ObjectDetails */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				4CDF5AAB282C0FAD00AF69A9 /* ImageLoading.swift */,
 				4CDF5AAC282C0FAD00AF69A9 /* SyncOperation.swift */,
 				4CDF5AAD282C0FAD00AF69A9 /* ImageCaching.swift */,
+				4C91ADC7282D41A30032602E /* ImageCompressor.swift */,
 			);
 			path = ImageLoading;
 			sourceTree = "<group>";
@@ -690,6 +694,7 @@
 				4CDF5AB0282C0FAD00AF69A9 /* ImageLoading.swift in Sources */,
 				4C91AD96282CF35E0032602E /* CollectionFactory.swift in Sources */,
 				4C91AD9B282CF4A20032602E /* CollectionRouting.swift in Sources */,
+				4C91ADC8282D41A30032602E /* ImageCompressor.swift in Sources */,
 				4C91ADBB282D39760032602E /* CollectionDetailsService.swift in Sources */,
 				4CDF5AC3282C11A300AF69A9 /* CollectionRequest.swift in Sources */,
 				4C91ADC1282D3A7B0032602E /* CollectionDetailsRequest.swift in Sources */,
@@ -706,6 +711,7 @@
 				4C91AD82282C3F4F0032602E /* CollectionRequesting.swift in Sources */,
 				4CDF5ABB282C0FF200AF69A9 /* URLEncoder.swift in Sources */,
 				4C91ADA0282CF6C00032602E /* CollectionViewModelTests.swift in Sources */,
+				4C91ADC9282D42190032602E /* ImageCompressor.swift in Sources */,
 				4CDF5AC6282C12B700AF69A9 /* CollectionRequest.swift in Sources */,
 				4CDF5ABC282C0FF500AF69A9 /* JSONDecoder+Decoding.swift in Sources */,
 				4CDF5AC0282C0FF900AF69A9 /* ImageLoader.swift in Sources */,

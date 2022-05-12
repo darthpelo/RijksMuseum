@@ -33,9 +33,20 @@ public final class ImageLoader: ImageLoading {
         let operation = SyncOperation { [url] in
             try? Data(contentsOf: url)
         } completion: { [weak self] data in
-            if let self = self, let data = data, let image = UIImage(data: data) {
-                self.cache.storeImage(image, byUrl: self.url)
-                onSuccess(image)
+            if let self = self,
+               let data = data,
+               let image = UIImage(data: data)
+            {
+                ImageCompressor.compress(image: image, maxByte: 1_000_000) { [weak self] image in
+                    guard let self = self,
+                          let compressedImage = image
+                    else {
+                        onFailure?()
+                        return
+                    }
+                    self.cache.storeImage(compressedImage, byUrl: self.url)
+                    onSuccess(compressedImage)
+                }
             } else {
                 onFailure?()
             }
