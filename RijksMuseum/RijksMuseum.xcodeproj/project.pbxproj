@@ -676,7 +676,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "sourcery --config ${PROJECT_DIR}/.sourcery.yml\n";
+			shellScript = "${PROJECT_DIR}/../Sourcery/bin/sourcery --config ${PROJECT_DIR}/.sourcery.yml\n";
 		};
 		4CDF5A77282C02EA00AF69A9 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
