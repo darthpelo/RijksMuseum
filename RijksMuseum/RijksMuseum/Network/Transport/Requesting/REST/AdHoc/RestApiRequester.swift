@@ -40,6 +40,9 @@ final class RestApiRequester: Requesting {
         urlRequest.httpMethod = method.rawValue
         header.forEach { urlRequest.setValue($0.value, forHTTPHeaderField: $0.key) }
 
+        session.configuration.timeoutIntervalForRequest = 10
+        session.configuration.timeoutIntervalForResource = 30
+
         session.dataTask(with: urlRequest) { [decoder] data, _, error in
             do {
                 let result: T.Response = try decoder.decode(T.Response.self, from: data ?? .init())

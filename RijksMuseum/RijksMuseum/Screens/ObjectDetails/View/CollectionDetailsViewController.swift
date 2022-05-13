@@ -41,16 +41,14 @@ final class CollectionDetailsViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        if !placeholderView.isHidden {
-            placeholderView.frame = .init(
-                x: 0.0,
-                y: 0.0,
-                width: view.frame.width,
-                height: view.safeAreaLayoutGuide.layoutFrame.maxY
-            )
+        placeholderView.frame = .init(
+            x: 0.0,
+            y: 0.0,
+            width: view.frame.width,
+            height: view.safeAreaLayoutGuide.layoutFrame.maxY
+        )
 
-            placeholderView.bounds = placeholderView.frame
-        }
+        placeholderView.bounds = placeholderView.frame
     }
 
     private func setupObservers() {

@@ -83,6 +83,8 @@
 		4CDF5AC3282C11A300AF69A9 /* CollectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF5AC2282C11A300AF69A9 /* CollectionRequest.swift */; };
 		4CDF5AC5282C123E00AF69A9 /* CollectionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF5AC4282C123E00AF69A9 /* CollectionServiceTests.swift */; };
 		4CDF5AC6282C12B700AF69A9 /* CollectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF5AC2282C11A300AF69A9 /* CollectionRequest.swift */; };
+		4CF6C166282E65D7009FAA75 /* Reachability .swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6C165282E65D7009FAA75 /* Reachability .swift */; };
+		4CF6C168282E6658009FAA75 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6C167282E6658009FAA75 /* NotificationName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +150,8 @@
 		4CDF5AAD282C0FAD00AF69A9 /* ImageCaching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCaching.swift; sourceTree = "<group>"; };
 		4CDF5AC2282C11A300AF69A9 /* CollectionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRequest.swift; sourceTree = "<group>"; };
 		4CDF5AC4282C123E00AF69A9 /* CollectionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionServiceTests.swift; sourceTree = "<group>"; };
+		4CF6C165282E65D7009FAA75 /* Reachability .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reachability .swift"; sourceTree = "<group>"; };
+		4CF6C167282E6658009FAA75 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +251,8 @@
 				4C91ADAE282D0B330032602E /* PlaceholderView.swift */,
 				4C91ADA6282CFBEA0032602E /* ObservablePropertyWrapper.swift */,
 				4C91ADA8282CFC150032602E /* UIView+ReuseIdentifier.swift */,
+				4CF6C165282E65D7009FAA75 /* Reachability .swift */,
+				4CF6C167282E6658009FAA75 /* NotificationName.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -709,6 +715,7 @@
 				4CDF5AA6282C0FA300AF69A9 /* HttpMethod.swift in Sources */,
 				4CDF5AA3282C0FA300AF69A9 /* UrlRestApiRequester.swift in Sources */,
 				4CDF5A9E282C0FA300AF69A9 /* Encoding.swift in Sources */,
+				4CF6C166282E65D7009FAA75 /* Reachability .swift in Sources */,
 				4CDF5AAF282C0FAD00AF69A9 /* ImagePool.swift in Sources */,
 				4C91ADB5282D29930032602E /* CollectionViewController+CollectionView.swift in Sources */,
 				4C91ADB9282D39520032602E /* CollectionDetailsRequesting.swift in Sources */,
@@ -726,6 +733,7 @@
 				4C91ADD2282D4A710032602E /* CollectionDetailsFactory.swift in Sources */,
 				4C91AD8A282CEAA90032602E /* CollectionViewModel.swift in Sources */,
 				4CDF5AA2282C0FA300AF69A9 /* Requesting.swift in Sources */,
+				4CF6C168282E6658009FAA75 /* NotificationName.swift in Sources */,
 				4CDF5AB0282C0FAD00AF69A9 /* ImageLoading.swift in Sources */,
 				4C91AD96282CF35E0032602E /* CollectionFactory.swift in Sources */,
 				4C91ADD4282D587E0032602E /* CollectionDetailsPresentable.swift in Sources */,

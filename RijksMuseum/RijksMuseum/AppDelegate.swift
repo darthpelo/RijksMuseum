@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
 
+        Reachability.shared.startNetworkReachabilityObserver()
+
         let factory = CollectionFactory()
         let navigationController = UINavigationController()
         let collectionViewController = factory.create(withNavigationController: navigationController)

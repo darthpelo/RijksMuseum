@@ -73,6 +73,12 @@ final class CollectionViewModel {
 
     /// Handles view loading completion event
     func onViewLoad() {
+        // Observe internet connection
+        [Notifications.Reachability.connected.name,
+         Notifications.Reachability.notConnected.name].forEach { notification in
+            NotificationCenter.default.addObserver(self, selector: #selector(changeInternetConnection), name: notification, object: nil)
+        }
+
         isActivityIndicatorAnimating = true
         loadNextPage()
     }
@@ -97,6 +103,13 @@ final class CollectionViewModel {
     }
 
     // MARK: - Private
+
+    @objc
+    private func changeInternetConnection(notification: Notification) {
+        if notification.name == Notifications.Reachability.notConnected.name {
+            error()
+        }
+    }
 
     private func loadNextPage() {
         guard dataLoadingQueue.operationCount == 0 else { return }
@@ -133,9 +146,7 @@ final class CollectionViewModel {
             if case let .success(data) = result {
                 self?.appendNewImages(data)
             } else if self?.currentPage == 1 {
-                self?.isActivityIndicatorAnimating = false
-                self?.collection = []
-                self?.onReload?()
+                self?.error()
             }
         }
     }
@@ -175,5 +186,14 @@ final class CollectionViewModel {
         }
 
         currentPage += 1
+    }
+
+    private func error() {
+        DispatchQueue.main.async { [weak self] in
+            self?.isActivityIndicatorAnimating = false
+            self?.isPlaceholderHidden = false
+            self?.collection = []
+            self?.onReload?()
+        }
     }
 }

@@ -50,6 +50,7 @@ final class PlaceholderView: UIView {
         stackView.addArrangedSubview(titleLabel)
 
         titleLabel.numberOfLines = appearance.titleLabelNumberOfLines
+        titleLabel.textAlignment = appearance.titleLabelTextAlignment
     }
 
     private func setupConstraints() {
@@ -69,5 +70,6 @@ private extension PlaceholderView {
         let stackViewAlignment: UIStackView.Alignment = .center
         let stackViewSpacing: CGFloat = 5.0
         let titleLabelNumberOfLines: Int = 0
+        let titleLabelTextAlignment: NSTextAlignment = .center
     }
 }
