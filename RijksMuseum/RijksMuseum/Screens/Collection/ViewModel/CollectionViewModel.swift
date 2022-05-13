@@ -129,15 +129,13 @@ final class CollectionViewModel {
     }
 
     private func handleImages(_ result: Result<[ArtObjectData], Error>) {
-        if case let .success(data) = result {
-            DispatchQueue.main.async {
-                self.appendNewImages(data)
-            }
-        } else if currentPage == 1 {
-            DispatchQueue.main.async {
-                self.isActivityIndicatorAnimating = false
-                self.collection = []
-                self.onReload?()
+        DispatchQueue.main.async { [weak self] in
+            if case let .success(data) = result {
+                self?.appendNewImages(data)
+            } else if self?.currentPage == 1 {
+                self?.isActivityIndicatorAnimating = false
+                self?.collection = []
+                self?.onReload?()
             }
         }
     }
