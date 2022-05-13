@@ -57,7 +57,7 @@ final class CollectionDetailsViewController: UIViewController {
 
 extension CollectionDetailsViewController {
     struct Appearance {
-        let backgroundColor: UIColor = .systemBackground
+        let backgroundColor: UIColor = .systemGray
         let placeholderViewImage: UIImage = .init(named: "no_results_placeholder") ?? .init()
         let activityIndicatorBackgroundColor: UIColor = .clear
         let activityIndicatorBackgroundCornerRadius: CGFloat = 2.0

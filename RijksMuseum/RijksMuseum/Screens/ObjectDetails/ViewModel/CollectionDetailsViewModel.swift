@@ -81,8 +81,9 @@ final class CollectionDetailsViewModel {
     private func handleImage(_ result: Result<(title: String, url: String), Error>) {
         if case let .success(data) = result {
             DispatchQueue.main.async { [weak self] in
+                let path = data.url.replacingOccurrences(of: "=s0", with: "=w400")
                 guard let self = self,
-                      let url = URL(string: data.url) else { return }
+                      let url = URL(string: path) else { return }
 
                 let imageLoader = ImageLoader(queue: self.imageLoadingQueue, url: url, cache: self.imagePool)
                 self.model = CollectionModel(objectNumber: "",

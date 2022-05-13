@@ -98,6 +98,7 @@ final class CollectionViewController: UIViewController {
 
     private func setupSubviews() {
         navigationController?.isNavigationBarHidden = appearance.isNavigationBarHidden
+        navigationItem.backButtonTitle = appearance.backbuttonTitle
         title = appearance.navigationTitle
         view.backgroundColor = appearance.backgroundColor
 

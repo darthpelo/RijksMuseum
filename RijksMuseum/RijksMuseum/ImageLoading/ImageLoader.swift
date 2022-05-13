@@ -37,16 +37,8 @@ public final class ImageLoader: ImageLoading {
                let data = data,
                let image = UIImage(data: data)
             {
-                ImageCompressor.compress(image: image, maxByte: 2_000_000) { [weak self] image in
-                    guard let self = self,
-                          let compressedImage = image
-                    else {
-                        onFailure?()
-                        return
-                    }
-                    self.cache.storeImage(compressedImage, byUrl: self.url)
-                    onSuccess(compressedImage)
-                }
+                self.cache.storeImage(image, byUrl: self.url)
+                onSuccess(image)
             } else {
                 onFailure?()
             }

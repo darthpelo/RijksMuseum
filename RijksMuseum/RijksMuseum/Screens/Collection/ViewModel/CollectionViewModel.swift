@@ -145,7 +145,8 @@ final class CollectionViewModel {
         onPullToRefreshDeactivation?()
 
         let newCollection: [CollectionModel] = data.compactMap {
-            guard let url = URL(string: $0.url) else { return nil }
+            let path = $0.url.replacingOccurrences(of: "=s0", with: "=w200")
+            guard let url = URL(string: path) else { return nil }
 
             let imageLoader = ImageLoader(queue: imageLoadingQueue, url: url, cache: imagePool)
             let model = CollectionModel(

@@ -10,6 +10,7 @@ import UIKit
 internal extension CollectionViewController {
     struct Appearance {
         let isNavigationBarHidden = false
+        let backbuttonTitle = ""
         let backgroundColor: UIColor = .systemBackground
         let searchBarStyle: UISearchBar.Style = .minimal
         let searchBarTextFieldClearButtonMode: UITextField.ViewMode = .never

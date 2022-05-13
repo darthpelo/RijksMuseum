@@ -11,6 +11,7 @@ import UIKit
 final class CollectionDetailsView: UIView, CollectionPresentable {
     private let imageView = UIImageView()
     private let titleLabel = UILabel()
+    private let appearance = Appearance()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,6 +30,8 @@ final class CollectionDetailsView: UIView, CollectionPresentable {
 
     func setTitle(_ title: String) {
         titleLabel.text = title
+        titleLabel.numberOfLines = appearance.numberOfLines
+        titleLabel.textAlignment = appearance.textAlignment
     }
 
     func setPlaceholder(_: String) {}
@@ -41,12 +44,23 @@ final class CollectionDetailsView: UIView, CollectionPresentable {
 
         imageView.contentMode = .scaleAspectFit
         imageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.center.equalToSuperview()
+            make.left.equalToSuperview().offset(20)
+            make.right.equalToSuperview().offset(-20)
         }
 
         titleLabel.snp.makeConstraints { make in
-            make.left.right.bottom.equalToSuperview()
-            make.height.equalTo(100)
+            make.top.equalToSuperview().offset(44)
+            make.left.equalToSuperview().offset(20)
+            make.right.equalToSuperview().offset(-20)
+            make.height.equalTo(200)
         }
+    }
+}
+
+extension CollectionDetailsView {
+    struct Appearance {
+        let numberOfLines = 0
+        let textAlignment: NSTextAlignment = .center
     }
 }
