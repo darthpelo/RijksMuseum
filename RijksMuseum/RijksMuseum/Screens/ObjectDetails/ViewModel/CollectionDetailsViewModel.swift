@@ -107,9 +107,7 @@ final class CollectionDetailsViewModel {
                 let imageLoader = ImageLoader(queue: self.imageLoadingQueue, url: url, cache: self.imagePool)
                 self.model = CollectionModel(objectNumber: "",
                                              imageLoader: imageLoader,
-                                             imageTitle: data.title,
-                                             loadingTitle: "",
-                                             failureTitle: "")
+                                             imageTitle: data.title)
                 if let model = self.model {
                     self.isActivityIndicatorAnimating = false
                     self.onReload?(model)

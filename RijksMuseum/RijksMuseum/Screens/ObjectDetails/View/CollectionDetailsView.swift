@@ -34,7 +34,7 @@ final class CollectionDetailsView: UIView, CollectionPresentable {
         titleLabel.textAlignment = appearance.textAlignment
     }
 
-    func setPlaceholder(_: String) {}
+    func setPlaceholder() {}
 
     func setOnPrepareForReuse(_: @escaping () -> Void) {}
 

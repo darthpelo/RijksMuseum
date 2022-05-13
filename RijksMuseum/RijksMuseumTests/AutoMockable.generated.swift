@@ -115,15 +115,11 @@ class CollectionPresentableMock: CollectionPresentable {
         setPlaceholderCallsCount > 0
     }
 
-    var setPlaceholderReceivedPalceholder: String?
-    var setPlaceholderReceivedInvocations: [String] = []
-    var setPlaceholderClosure: ((String) -> Void)?
+    var setPlaceholderClosure: (() -> Void)?
 
-    func setPlaceholder(_ palceholder: String) {
+    func setPlaceholder() {
         setPlaceholderCallsCount += 1
-        setPlaceholderReceivedPalceholder = palceholder
-        setPlaceholderReceivedInvocations.append(palceholder)
-        setPlaceholderClosure?(palceholder)
+        setPlaceholderClosure?()
     }
 
     // MARK: - setOnPrepareForReuse

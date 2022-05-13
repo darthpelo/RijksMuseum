@@ -13,27 +13,19 @@ final class CollectionModel {
 
     let objectNumber: String
     private let imageLoader: ImageLoading
-    private let loadingTitle: String
-    private let failureTitle: String
     private let imageTitle: String
 
     /// Designated initializer
     /// - Parameter objectNumber: Collection object number
     /// - Parameter imageLoader: Asynchronous image loading service
-    /// - Parameter loadingTitle: Loading state cell title text
-    /// - Parameter failureTitle: Failed state cell title text
     init(
         objectNumber: String,
         imageLoader: ImageLoading,
-        imageTitle: String,
-        loadingTitle: String,
-        failureTitle: String
+        imageTitle: String
     ) {
         self.objectNumber = objectNumber
         self.imageLoader = imageLoader
         self.imageTitle = imageTitle
-        self.loadingTitle = loadingTitle
-        self.failureTitle = failureTitle
     }
 
     /// Binds model to presenter
@@ -43,7 +35,7 @@ final class CollectionModel {
 
         self.presenter = presenter
 
-        presenter.setPlaceholder(loadingTitle)
+        presenter.setPlaceholder()
         presenter.setOnPrepareForReuse { [weak self] in
             self?.unbind()
         }
@@ -70,7 +62,7 @@ final class CollectionModel {
 
     private func onImageLoadFailure() {
         DispatchQueue.main.async {
-            self.presenter?.setTitle(self.failureTitle)
+            self.presenter?.setTitle("")
         }
     }
 }

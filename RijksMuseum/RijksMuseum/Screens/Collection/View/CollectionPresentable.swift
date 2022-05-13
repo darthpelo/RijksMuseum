@@ -18,9 +18,8 @@ protocol CollectionPresentable: AnyObject {
     /// - Parameter image: Search result image
     func setImage(_ image: UIImage)
 
-    /// Assigns the placeholder label text
-    /// - Parameter palceholder: Placeholder label text
-    func setPlaceholder(_ palceholder: String)
+    /// Set the placeholder label text
+    func setPlaceholder()
 
     /// Assings the prepare for reuse event start handler
     /// - Parameter onPrepareForReuse: Reuse preparation handler

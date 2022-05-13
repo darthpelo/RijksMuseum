@@ -152,9 +152,7 @@ final class CollectionViewModel {
             let model = CollectionModel(
                 objectNumber: $0.objectNumber,
                 imageLoader: imageLoader,
-                imageTitle: $0.title,
-                loadingTitle: "Loading",
-                failureTitle: "Failed to load image\nPress to retry"
+                imageTitle: $0.title
             )
 
             return model

@@ -12,8 +12,7 @@ final class CollectionModelTests: XCTestCase {
     private var subject: CollectionModel!
     private var imageLoader: ImageLoadingMock!
     private var presenter: CollectionPresentableMock!
-    private let loadingTitle = "loadingTitle"
-    private let failureTitle = "failureTitle"
+    private let failureTitle = ""
     private let imageTitle = "imageTitle"
     private let objectNumber = "objectNumber"
 
@@ -23,9 +22,7 @@ final class CollectionModelTests: XCTestCase {
         subject = .init(
             objectNumber: objectNumber,
             imageLoader: imageLoader,
-            imageTitle: imageTitle,
-            loadingTitle: loadingTitle,
-            failureTitle: failureTitle
+            imageTitle: imageTitle
         )
     }
 
@@ -44,7 +41,6 @@ final class CollectionModelTests: XCTestCase {
         XCTAssert(imageLoader.cancelLoadingCallsCount == 1)
         // 2. set up the presenter
         XCTAssert(presenter.setPlaceholderCallsCount == 1)
-        XCTAssert(presenter.setPlaceholderReceivedPalceholder == loadingTitle)
         // 3. start loading the image
         XCTAssert(imageLoader.loadImageOnSuccessOnFailureCallsCount == 1)
 

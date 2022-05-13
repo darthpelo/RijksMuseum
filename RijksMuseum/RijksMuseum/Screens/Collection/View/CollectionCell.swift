@@ -29,8 +29,8 @@ final class CollectionCell: UICollectionViewCell, CollectionPresentable {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setPlaceholder(_ placeholder: String) {
-        placeholderLabel.text = placeholder
+    func setPlaceholder() {
+        placeholderLabel.text = appearance.placeholderLabel
     }
 
     func setTitle(_ title: String) {
@@ -94,5 +94,6 @@ private extension CollectionCell {
         let titleLabelNumberOfLines: Int = 0
         let placeholderLabelTextAlignment: NSTextAlignment = .center
         let titleLabelTextAligment: NSTextAlignment = .center
+        let placeholderLabel = "Loading..."
     }
 }
