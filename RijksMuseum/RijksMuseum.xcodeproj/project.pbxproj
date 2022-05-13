@@ -85,6 +85,7 @@
 		4CDF5AC6282C12B700AF69A9 /* CollectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF5AC2282C11A300AF69A9 /* CollectionRequest.swift */; };
 		4CF6C166282E65D7009FAA75 /* Reachability .swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6C165282E65D7009FAA75 /* Reachability .swift */; };
 		4CF6C168282E6658009FAA75 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6C167282E6658009FAA75 /* NotificationName.swift */; };
+		4CF6C169282E7E35009FAA75 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6C167282E6658009FAA75 /* NotificationName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -752,6 +753,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C91AD82282C3F4F0032602E /* CollectionRequesting.swift in Sources */,
+				4CF6C169282E7E35009FAA75 /* NotificationName.swift in Sources */,
 				4CDF5ABB282C0FF200AF69A9 /* URLEncoder.swift in Sources */,
 				4C91ADA0282CF6C00032602E /* CollectionViewModelTests.swift in Sources */,
 				4CDF5AC6282C12B700AF69A9 /* CollectionRequest.swift in Sources */,
