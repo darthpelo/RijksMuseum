@@ -29,9 +29,9 @@ final class CollectionViewModelTests: XCTestCase {
 
     func testInitialState() throws {
         XCTAssert(subject.columnsCount == 2)
-        XCTAssert(subject.placeholderTitle == "No results")
+        XCTAssert(subject.placeholderTitle == "Somenthing went wrong.\nTry later")
         XCTAssertFalse(subject.isActivityIndicatorAnimating)
-        XCTAssertFalse(subject.isPlaceholderHidden)
+        XCTAssertTrue(subject.isPlaceholderHidden)
     }
 
     func testEmptyQueryRefresh() throws {
