@@ -30,8 +30,19 @@ final class CollectionDetailsViewModel {
         return result
     }()
 
+    /// Placeholder view  title label text
+    let placeholderTitle: String = "Somenthing went wrong.\nTry later"
+
     /// Full screen reload event handler
     var onReload: ((CollectionModel) -> Void)?
+
+    /// Activity indicator animating state
+    @Observable
+    private(set) var isActivityIndicatorAnimating = false
+
+    /// Placeholder view visibility indicator
+    @Observable
+    private(set) var isPlaceholderHidden: Bool = true
 
     /// Designated initializer
     /// - Parameter service: Collection Details service
@@ -43,7 +54,7 @@ final class CollectionDetailsViewModel {
 
     /// Handles view loading completion event
     func onViewLoad() {
-        //        isActivityIndicatorAnimating = true
+        isActivityIndicatorAnimating = true
         loadDetails()
     }
 
@@ -55,7 +66,10 @@ final class CollectionDetailsViewModel {
         let operation = SyncOperation { [weak self] in
             self?.getDetails()
         } completion: { [weak self] result in
-            guard let result = result else { return }
+            guard let result = result else {
+                self?.error()
+                return
+            }
             self?.handleImage(result)
         }
 
@@ -83,7 +97,12 @@ final class CollectionDetailsViewModel {
             DispatchQueue.main.async { [weak self] in
                 let path = data.url.replacingOccurrences(of: "=s0", with: "=w400")
                 guard let self = self,
-                      let url = URL(string: path) else { return }
+                      let url = URL(string: path)
+                else {
+                    self?.isActivityIndicatorAnimating = false
+                    self?.error()
+                    return
+                }
 
                 let imageLoader = ImageLoader(queue: self.imageLoadingQueue, url: url, cache: self.imagePool)
                 self.model = CollectionModel(objectNumber: "",
@@ -92,15 +111,21 @@ final class CollectionDetailsViewModel {
                                              loadingTitle: "",
                                              failureTitle: "")
                 if let model = self.model {
+                    self.isActivityIndicatorAnimating = false
                     self.onReload?(model)
                 }
             }
         } else {
-            DispatchQueue.main.async {
-                //                self.isActivityIndicatorAnimating = false
-                //                self.collection = []
-                //                self.onReload?()
+            DispatchQueue.main.async { [weak self] in
+                self?.isActivityIndicatorAnimating = false
             }
+            error()
+        }
+    }
+
+    private func error() {
+        DispatchQueue.main.async { [weak self] in
+            self?.isPlaceholderHidden = false
         }
     }
 }

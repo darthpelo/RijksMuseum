@@ -13,7 +13,7 @@ final class CollectionViewModel {
     let columnsCount: Int = 2
 
     /// Collection list placeholder title label text
-    let placeholderTitle: String = "No results"
+    let placeholderTitle: String = "Somenthing went wrong.\nTry later"
 
     /// Pull-to-refresh indicator deactivation event handler
     var onPullToRefreshDeactivation: (() -> Void)?
@@ -30,7 +30,7 @@ final class CollectionViewModel {
 
     /// Collection list placeholder visibility indicator
     @Observable
-    private(set) var isPlaceholderHidden: Bool = false
+    private(set) var isPlaceholderHidden: Bool = true
 
     /// Collection model
     private(set) var collection: [CollectionModel] = [] {

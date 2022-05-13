@@ -28,7 +28,7 @@
 		4C91ADA9282CFC150032602E /* UIView+ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADA8282CFC150032602E /* UIView+ReuseIdentifier.swift */; };
 		4C91ADAA282CFC7B0032602E /* ObservablePropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADA6282CFBEA0032602E /* ObservablePropertyWrapper.swift */; };
 		4C91ADAD282D0A620032602E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4C91ADAC282D0A620032602E /* SnapKit */; };
-		4C91ADAF282D0B330032602E /* CollectionPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADAE282D0B330032602E /* CollectionPlaceholderView.swift */; };
+		4C91ADAF282D0B330032602E /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADAE282D0B330032602E /* PlaceholderView.swift */; };
 		4C91ADB1282D25530032602E /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADB0282D25530032602E /* CollectionCell.swift */; };
 		4C91ADB3282D28FE0032602E /* CollectionViewController+Apparence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADB2282D28FE0032602E /* CollectionViewController+Apparence.swift */; };
 		4C91ADB5282D29930032602E /* CollectionViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91ADB4282D29930032602E /* CollectionViewController+CollectionView.swift */; };
@@ -109,7 +109,7 @@
 		4C91AD9F282CF6C00032602E /* CollectionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModelTests.swift; sourceTree = "<group>"; };
 		4C91ADA6282CFBEA0032602E /* ObservablePropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservablePropertyWrapper.swift; sourceTree = "<group>"; };
 		4C91ADA8282CFC150032602E /* UIView+ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ReuseIdentifier.swift"; sourceTree = "<group>"; };
-		4C91ADAE282D0B330032602E /* CollectionPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPlaceholderView.swift; sourceTree = "<group>"; };
+		4C91ADAE282D0B330032602E /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		4C91ADB0282D25530032602E /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		4C91ADB2282D28FE0032602E /* CollectionViewController+Apparence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewController+Apparence.swift"; sourceTree = "<group>"; };
 		4C91ADB4282D29930032602E /* CollectionViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewController+CollectionView.swift"; sourceTree = "<group>"; };
@@ -192,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				4C91ADB0282D25530032602E /* CollectionCell.swift */,
-				4C91ADAE282D0B330032602E /* CollectionPlaceholderView.swift */,
 				4C91AD8D282CEB030032602E /* CollectionPresentable.swift */,
 				4C91AD97282CF3D00032602E /* CollectionViewController.swift */,
 				4C91ADB2282D28FE0032602E /* CollectionViewController+Apparence.swift */,
@@ -245,6 +244,7 @@
 		4C91ADA5282CFBD20032602E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4C91ADAE282D0B330032602E /* PlaceholderView.swift */,
 				4C91ADA6282CFBEA0032602E /* ObservablePropertyWrapper.swift */,
 				4C91ADA8282CFC150032602E /* UIView+ReuseIdentifier.swift */,
 			);
@@ -699,7 +699,7 @@
 				4C91AD98282CF3D00032602E /* CollectionViewController.swift in Sources */,
 				4CDF5AA7282C0FA300AF69A9 /* UrlError.swift in Sources */,
 				4C91ADCC282D471C0032602E /* CollectionDetailsViewModel.swift in Sources */,
-				4C91ADAF282D0B330032602E /* CollectionPlaceholderView.swift in Sources */,
+				4C91ADAF282D0B330032602E /* PlaceholderView.swift in Sources */,
 				4CDF5A80282C0E3F00AF69A9 /* CollectionRequesting.swift in Sources */,
 				4CDF5AAE282C0FAD00AF69A9 /* ImageLoader.swift in Sources */,
 				4C91AD80282C3CCA0032602E /* CollectionService.swift in Sources */,

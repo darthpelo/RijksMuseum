@@ -9,7 +9,7 @@ import SnapKit
 import UIKit
 
 /// Collection placeholder
-final class CollectionPlaceholderView: UIView {
+final class PlaceholderView: UIView {
     private let stackView = UIStackView()
     private let imageView = UIImageView()
     private let titleLabel = UILabel()
@@ -63,7 +63,7 @@ final class CollectionPlaceholderView: UIView {
 
 // MARK: - Appearance
 
-private extension CollectionPlaceholderView {
+private extension PlaceholderView {
     struct Appearance {
         let stackViewAxis: NSLayoutConstraint.Axis = .vertical
         let stackViewAlignment: UIStackView.Alignment = .center

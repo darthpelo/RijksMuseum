@@ -17,7 +17,7 @@ final class CollectionViewController: UIViewController {
 
     private let refreshControl = UIRefreshControl()
     private let activityIndicator = UIActivityIndicatorView(style: .large)
-    private let placeholderView = CollectionPlaceholderView()
+    private let placeholderView = PlaceholderView()
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 
     internal var fullRowsCount: Int { viewModel.collection.count / viewModel.columnsCount }

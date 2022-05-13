@@ -12,7 +12,8 @@ import UIKit
 final class CollectionDetailsViewController: UIViewController {
     private let viewModel: CollectionDetailsViewModel
     private let appearance = Appearance()
-
+    private let activityIndicator = UIActivityIndicatorView(style: .large)
+    private let placeholderView = PlaceholderView()
     private let detailsView = CollectionDetailsView()
 
     /// Designated initializer
@@ -37,20 +38,61 @@ final class CollectionDetailsViewController: UIViewController {
         viewModel.onViewLoad()
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        if !placeholderView.isHidden {
+            placeholderView.frame = .init(
+                x: 0.0,
+                y: 0.0,
+                width: view.frame.width,
+                height: view.safeAreaLayoutGuide.layoutFrame.maxY
+            )
+
+            placeholderView.bounds = placeholderView.frame
+        }
+    }
+
     private func setupObservers() {
         viewModel.onReload = { details in
             details.bind(to: self.detailsView)
+        }
+
+        viewModel.$isActivityIndicatorAnimating.onValueChange = { [weak self] isAnimating in
+            if isAnimating {
+                self?.activityIndicator.startAnimating()
+            } else {
+                self?.activityIndicator.stopAnimating()
+            }
+        }
+
+        viewModel.$isPlaceholderHidden.onValueChange = { [weak self] isHidden in
+            self?.placeholderView.isHidden = isHidden
         }
     }
 
     private func setupSubviews() {
         view.backgroundColor = appearance.backgroundColor
+
+        view.addSubview(placeholderView)
+        placeholderView.setImage(appearance.placeholderViewImage)
+        placeholderView.setTitle(viewModel.placeholderTitle)
+        placeholderView.isHidden = viewModel.isPlaceholderHidden
+
         view.addSubview(detailsView)
+
+        view.addSubview(activityIndicator)
+        activityIndicator.backgroundColor = appearance.activityIndicatorBackgroundColor
+        activityIndicator.layer.cornerRadius = appearance.activityIndicatorBackgroundCornerRadius
     }
 
     private func setupConstraints() {
         detailsView.snp.makeConstraints { make in
             make.top.bottom.leading.trailing.equalTo(view)
+        }
+
+        activityIndicator.snp.makeConstraints { make in
+            make.center.equalTo(view)
         }
     }
 }
