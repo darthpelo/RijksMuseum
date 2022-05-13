@@ -30,8 +30,6 @@ final class CollectionDetailsView: UIView, CollectionPresentable {
 
     func setTitle(_ title: String) {
         titleLabel.text = title
-        titleLabel.numberOfLines = appearance.numberOfLines
-        titleLabel.textAlignment = appearance.textAlignment
     }
 
     func setPlaceholder() {}
@@ -41,19 +39,22 @@ final class CollectionDetailsView: UIView, CollectionPresentable {
     private func setupSubviews() {
         addSubview(imageView)
         addSubview(titleLabel)
-
-        imageView.contentMode = .scaleAspectFit
-        imageView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.left.equalToSuperview().offset(20)
-            make.right.equalToSuperview().offset(-20)
-        }
+        titleLabel.numberOfLines = appearance.numberOfLines
+        titleLabel.textAlignment = appearance.textAlignment
 
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(44)
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
             make.height.equalTo(200)
+        }
+
+        imageView.contentMode = .scaleAspectFit
+        imageView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.top.equalTo(titleLabel.snp.bottom)
+            make.left.equalToSuperview().offset(20)
+            make.right.equalToSuperview().offset(-20)
         }
     }
 }

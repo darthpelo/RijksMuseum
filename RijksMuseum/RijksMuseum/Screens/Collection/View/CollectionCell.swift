@@ -50,16 +50,7 @@ final class CollectionCell: UICollectionViewCell, CollectionPresentable {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        imageView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.left.right.equalToSuperview().offset(-8)
-            make.bottom.equalToSuperview().offset(-80)
-        }
         placeholderLabel.frame = bounds
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom)
-            make.left.bottom.right.equalToSuperview()
-        }
     }
 
     override func prepareForReuse() {
@@ -83,6 +74,18 @@ final class CollectionCell: UICollectionViewCell, CollectionPresentable {
         addSubview(titleLabel)
         titleLabel.numberOfLines = appearance.titleLabelNumberOfLines
         titleLabel.textAlignment = appearance.titleLabelTextAligment
+
+        imageView.snp.makeConstraints { make in
+            make.left.top.equalToSuperview().offset(8)
+            make.right.equalToSuperview().offset(-8)
+            make.bottom.equalToSuperview().offset(-80)
+        }
+
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(imageView.snp.bottom)
+            make.bottom.right.equalToSuperview().offset(-8)
+            make.left.equalToSuperview().offset(8)
+        }
     }
 }
 

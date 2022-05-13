@@ -60,6 +60,11 @@ extension CollectionViewController: UICollectionViewDataSource {
         let model = viewModel.collection[indexPath.section * viewModel.columnsCount + indexPath.row]
         model.bind(to: cell)
 
+        let layer = cell.layer
+        layer.cornerRadius = 20.0
+        layer.borderColor = UIColor(white: 0.8, alpha: 1).cgColor
+        layer.borderWidth = 1
+
         return cell
     }
 
