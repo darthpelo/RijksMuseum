@@ -10,6 +10,8 @@
 
 * I used **MVVM** with a simple router and observation with only UIKit, no Combine.
 
+* OpenSource solution for chacing (**ImagePool**)
+
 * I used SwiftFormat and SwiftLint to enhance Swift style.
 
 * I used **SPM** (Swift Package Manager) only for *SnapKit*.
