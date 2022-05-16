@@ -17,3 +17,9 @@
 * I used **SPM** (Swift Package Manager) only for *SnapKit*.
 
 * I used Sourcery to create most of the Mocks for the Unit Test.
+
+* When there is an API error or not internet connection, instead of show a popup error I hide the list result showing a placeholder. Similar approach for the Details view.
+
+## Future Improvments
+
+* The UICollectionView is ready to manage different sections with header, but in this first version I get only the painting collection.
