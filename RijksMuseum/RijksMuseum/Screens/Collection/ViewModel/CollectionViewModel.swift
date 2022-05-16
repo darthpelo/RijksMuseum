@@ -42,7 +42,7 @@ final class CollectionViewModel {
     private var currentPage: Int = 1
     private var pageSize: Int = 10
 
-    private let imagePool = ImagePool(limit: 100)
+    private let imagePool = ImagePool.shared
 
     private let imageLoadingQueue: OperationQueue = {
         let result = OperationQueue()

@@ -12,7 +12,7 @@ final class CollectionDetailsViewModel {
     private let objectNumber: String
     private var model: CollectionModel?
 
-    private let imagePool = ImagePool(limit: 10)
+    private let imagePool = ImagePool.shared
 
     private let imageLoadingQueue: OperationQueue = {
         let result = OperationQueue()

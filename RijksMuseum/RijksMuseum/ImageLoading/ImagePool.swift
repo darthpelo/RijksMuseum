@@ -2,6 +2,8 @@ import UIKit
 
 /// Restricted-size image cache
 public final class ImagePool: ImageCaching {
+    static let shared = ImagePool(limit: 100)
+
     private var innerStorage: [URL: UIImage] = [:]
     private let limit: UInt
 
