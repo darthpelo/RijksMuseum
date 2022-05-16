@@ -39,7 +39,7 @@ final class CollectionService: CollectionRequesting {
         }
     }
 
-    private func imageData(fromArtObject artObject: CollectionRequest.Response.ArtObject) -> ArtObjectData {
+    private func imageData(fromArtObject artObject: ArtObject) -> ArtObjectData {
         (artObject.title, artObject.webImage.url, artObject.objectNumber)
     }
 }

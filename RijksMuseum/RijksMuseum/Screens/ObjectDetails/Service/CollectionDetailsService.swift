@@ -36,11 +36,11 @@ final class CollectionDetailsService: CollectionDetailsRequesting {
         }
     }
 
-    private func imageUrl(fromPhoto photo: CollectionDetailsRequest.Response.ArtObject) -> String {
+    private func imageUrl(fromPhoto photo: ArtObjectDetails) -> String {
         photo.webImage.url
     }
 
-    private func imageTitle(fromPhoto photo: CollectionDetailsRequest.Response.ArtObject) -> String {
-        photo.title
+    private func imageTitle(fromPhoto photo: ArtObjectDetails) -> String {
+        photo.title + "\n\n" + photo.description
     }
 }
